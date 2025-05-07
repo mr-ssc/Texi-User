@@ -1,45 +1,97 @@
+/* Direction Search Component - Matches Navbar Theme */
 .direction-container {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-attachment: fixed;
-    background-size: cover;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
-    transition: all 0.3s ease;
-  }
-  
-  .center {
-    width: 100%;
-    height: 100%;
+    max-width: 500px;
+    margin: 0px auto 2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeInUp 0.6s ease;
+}
+
+.direction-container h2 {
+    margin-bottom: 1.8rem;
+    color: #2a5298;
+    font-size: 1.8rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .search-btn {
-    padding: 12px 24px;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.direction-input {
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.direction-input:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.2);
+    outline: none;
+}
+
+.search-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
     border: none;
-    border-radius: 30px;
-    background-color: #fff;
-    color: #764ba2;
-    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-  }
-  
-  .search-btn:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-btn:hover {
+    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .search-btn {
-      padding: 10px 20px;
-      font-size: 14px;
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+/* Animation to match navbar items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-  }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .direction-container {
+        margin: 100px auto 2rem;
+        padding: 1.5rem;
+        width: 85%;
+    }
+
+    .direction-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-btn {
+        padding: 0.9rem;
+    }
+}

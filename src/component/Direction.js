@@ -1,23 +1,45 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './Direction.css';
 
 const Direction = () => {
-  useEffect(() => {
-    // Any initialization logic can go here
-  }, []);
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
 
   const handleSearch = () => {
-    console.log('Search button clicked');
-    // Add your search logic here
+    if (!from || !to) {
+      alert('Please enter both "From" and "To" locations');
+      return;
+    }
+    
+    // Open Google Maps with directions
+    window.open(`https://www.google.com/maps/dir/${encodeURIComponent(from)}/${encodeURIComponent(to)}`);
+    
+    // Alternatively, you could use a maps API here
+    console.log(`Searching directions from ${from} to ${to}`);
   };
 
   return (
     <div className="direction-container">
-      <div className="center">
-        <button className="search-btn" onClick={handleSearch}>
-          Search
-        </button>
+      <h2>Find Directions</h2>
+      <div className="input-group">
+        <input
+          type="text"
+          value={from}
+          onChange={(e) => setFrom(e.target.value)}
+          placeholder="From..."
+          className="direction-input"
+        />
+        <input
+          type="text"
+          value={to}
+          onChange={(e) => setTo(e.target.value)}
+          placeholder="To..."
+          className="direction-input"
+        />
       </div>
+      <button onClick={handleSearch} className="search-btn">
+        Get Directions
+      </button>
     </div>
   );
 };
