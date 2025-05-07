@@ -16,8 +16,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar__container">
         <div className="navbar__brand">
+          <Link to="/">
           <img src={logo} alt="TaxiGo Logo" className="navbar__logo" />
-        
+          </Link>
         </div>
 
         <div 

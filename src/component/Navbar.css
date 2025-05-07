@@ -27,12 +27,12 @@
   
   .navbar__logo {
     height: 80px;
-    width: 250px;
-    transition: transform 0.3s ease;
+    width: 300px;
+    transition: transform 0.5s ease;
   }
   
   .navbar__brand:hover .navbar__logo {
-    transform: rotate(-15deg) scale(1.1);
+    transform: scale(1.2, 1.2);
   }
   
   .navbar__title {
@@ -131,11 +131,23 @@
     transform: translateY(-9px) rotate(-45deg);
   }
   
+
+  @media (max-width: 910px) {
+
+    .navbar__logo{
+      height: 80px;
+      width: 240px;
+    }
+
+  }
+
   /* Responsive Design */
   @media (max-width: 768px) {
     .navbar__container {
       padding: 0 1rem;
     }
+
+
   
     .navbar__toggle {
       display: flex;
